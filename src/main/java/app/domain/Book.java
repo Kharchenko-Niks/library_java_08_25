@@ -8,11 +8,9 @@ public class Book {
     private String author;
     private boolean active = true;
 
-    public Book(long id, String title, String author, boolean active) {
-        this.id = id;
+    public Book( String title, String author) {
         this.title = title;
         this.author = author;
-
     }
 
 

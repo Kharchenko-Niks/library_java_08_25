@@ -63,4 +63,20 @@ public class BookService {
         return repository.findAll().size();
     }
 
+    public void deleteByTitles(String title){
+        getAllBooks()
+                .stream()
+                .filter(b -> b.getTitle().equals(title))
+                .forEach(b -> b.setActive(false));
+
+    }
+    public void restoreById(Long id){
+        Book book = repository.findById(id);
+        if (book != null){
+            book.setActive(true);
+        }else{
+            throw new RuntimeException("Книга с id " + id + " не найдена");
+        }
+    }
+
 }
