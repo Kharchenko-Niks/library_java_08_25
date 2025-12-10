@@ -19,10 +19,11 @@ public class ReaderController {
     }
 
     // Вернуть читателя по ID
-    public void getById(String id){
+    public boolean getById(String id){
         Long numId = Long.parseLong(id);
         service.getActiveReaderById(numId);
 
+        return false;
     }
 
     // Удалить читателя по ID
